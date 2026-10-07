@@ -57,11 +57,6 @@ Looker Studio dashboard ← not built yet
 3. Uploads the cleaned file to the GCS landing bucket
 4. Loads it into `energy_raw.household_power_consumption` in BigQuery with an explicit schema (not auto-detected)
 
-Run it with:
-```bash
-python load_to_bigquery.py --project YOUR_PROJECT_ID --bucket YOUR_BUCKET_NAME
-```
-
 ## Next steps
 
 1. **SQLMesh transformations** — build a `stg_power_consumption` model to clean and type the raw data, then a `daily_household_consumption` mart to aggregate it, each with audits (not-null, uniqueness checks) and a unit test that runs against fixture data without needing a live BigQuery connection.
